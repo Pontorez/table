@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>DataTable</title>
+    <link rel="stylesheet" href="css.css"/>
+    <script src="js.js"></script>
+    <script>
+        "use strict";
+        window.onload = function () {
+            new MyDataTable([
+                {id: 1, title: 'iPhone SE 16Gb', amount: 2, cost: 19000},
+                {id: 2, title: 'iPhone SE 32Gb', amount: 3, cost: 20350},
+                {id: 3, title: 'iPhone SE 64Gb', amount: 3, cost: 25400},
+                {id: 4, title: 'iPhone 7 32Gb', amount: 3, cost: 36700},
+                {id: 5, title: 'iPhone 6 32Gb', amount: 1, cost: 23890},
+                {id: 6, title: 'iPhone 5S 16Gb', amount: 1, cost: 15349},
+                {id: 7, title: 'iPhone 6 16Gb', amount: 1, cost: 23370}
+            ]);
+
+
+            // modal window:
+            var modal = document.getElementById('myModal');
+
+            document.getElementsByClassName("close")[0].onclick = function() {
+                modal.style.display = "none";
+            };
+
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        };
+    </script>
+</head>
+
+<body>
+<div id="container"></div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modalText"></p>
+    </div>
+</div>
+</body>
+
+</html>
