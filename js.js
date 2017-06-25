@@ -70,7 +70,7 @@ function MyDataTable(data) {
         };
 
         dge('export').onclick = function () {
-            dge('modalText').innerText = JSON.stringify(data);
+            dge('modalText').innerHTML = JSON.stringify(data);
             dge('myModal').style.display = 'block';
         };
 
@@ -82,6 +82,7 @@ function MyDataTable(data) {
                 cost: dge('new_cost').value
             };
             data.unshift(newObject);
+            page = 1;
             dt.init();
         };
 
@@ -89,7 +90,7 @@ function MyDataTable(data) {
         var sortLink = document.querySelectorAll('.orderBy th');
         for (i = 0; i < sortLink.length; i++) {
             sortLink[i].addEventListener('click', function (event) {
-                var sortBy = event.target.innerText;
+                var sortBy = event.target.innerHTML;
                 dt.sortDir = 1 - dt.sortDir;
 
                 if (dt.sortBy === sortBy) {
@@ -119,7 +120,7 @@ function MyDataTable(data) {
         var pagerLink = document.querySelectorAll('.setPage');
         for (i = 0; i < pagerLink.length; i++) {
             pagerLink[i].addEventListener('click', function (event) {
-                page = Number(event.target.innerText);
+                page = Number(event.target.innerHTML);
                 dt.init();
             });
         }

@@ -11,7 +11,7 @@ div {
 }
 
 .orderBy {
-    cursor: hand;
+    cursor: pointer;
 }
 
 .current:after {
